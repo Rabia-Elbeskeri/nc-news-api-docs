@@ -1,0 +1,17 @@
+.api-reference {
+    padding: 1.5rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+.api-section {
+    margin-bottom: 2rem;
+}
+
+.api-section h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.25rem;
+}

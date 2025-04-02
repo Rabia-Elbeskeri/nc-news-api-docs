@@ -1,0 +1,48 @@
+.endpoint-card {
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+}
+
+.endpoint-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.method {
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.get .method {
+    background-color: green;
+}
+
+.post .method {
+    background-color: blue;
+}
+
+.patch .method {
+    background-color: orange;
+}
+
+.delete .method {
+    background-color: red;
+}
+
+.path {
+    margin-left: 0.5rem;
+    font-family: monospace;
+    color: black;
+}
+
+.description {
+    color: #333;
+    font-size: 0.9rem;
+}
