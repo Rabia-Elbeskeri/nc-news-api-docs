@@ -21,3 +21,13 @@
 .navbar-links a:hover {
     color: gray;
 }
+
+.external-link {
+    color: #0077cc;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.external-link:hover {
+    text-decoration: underline;
+}
