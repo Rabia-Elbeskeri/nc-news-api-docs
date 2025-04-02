@@ -19,3 +19,10 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.home-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
