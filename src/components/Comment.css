@@ -1,0 +1,11 @@
+.comment {
+    padding: 0.8rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.comment-date {
+    color: #777;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}

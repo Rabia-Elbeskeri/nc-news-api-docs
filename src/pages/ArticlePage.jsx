@@ -3,13 +3,16 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ArticleCard from "../components/ArticleCard";
 import CommentList from "../components/CommentList";
+import NewCommentForm from "../components/NewCommentForm";
 import "./ArticlePage.css";
+
 
 const ArticlePage = () => {
     const { article_id } = useParams();
     const [article, setArticle] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         fetch(`https://nc-daily-news.onrender.com/api/articles/${article_id}`)
@@ -27,6 +30,25 @@ const ArticlePage = () => {
             });
     }, [article_id]);
 
+    const fetchComments = () => {
+        fetch(`https://nc-daily-news.onrender.com/api/articles/${article_id}/comments`)
+            .then((response) => response.json())
+            .then((data) => {
+                setComments(data.comments);
+            })
+            .catch(() => {
+                setComments([]);
+            });
+    };
+
+    useEffect(() => {
+        fetchComments();
+    }, [article_id]);
+
+    const handleCommentPosted = (newComment) => {
+        setComments((prev) => [newComment, ...prev]);
+    };
+
     if (isLoading) return <p>Loading article...</p>;
     if (error) return <p>Error: {error}</p>;
 
@@ -34,9 +56,11 @@ const ArticlePage = () => {
         <div className="article-page">
             <ArticleCard article={article} fullView={true} />
             <h3 className="comments-heading">Comments</h3>
-            <CommentList article_id={article_id} />
+            <NewCommentForm article_id={article_id} onCommentPosted={handleCommentPosted} />
+            <CommentList comments={comments} />
         </div>
     );
 };
 
 export default ArticlePage;
+
