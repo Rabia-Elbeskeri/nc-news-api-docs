@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import Comment from "./Comment";
+import NewCommentForm from "./NewCommentForm";
 import "./CommentList.css";
 
 const CommentList = ({ article_id }) => {
@@ -26,6 +27,10 @@ const CommentList = ({ article_id }) => {
 
     return (
         <div className="comment-list">
+            <NewCommentForm
+                article_id={article_id}
+                onCommentPosted={(newComment) => setComments((curr) => [newComment, ...curr])}
+            />
             {comments.map((comment) => (
                 <Comment key={comment.comment_id} comment={comment} />
             ))}
@@ -34,3 +39,5 @@ const CommentList = ({ article_id }) => {
 };
 
 export default CommentList;
+
+
