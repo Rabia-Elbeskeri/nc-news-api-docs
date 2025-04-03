@@ -7,7 +7,6 @@ import ArticleList from "./pages/ArticleList";
 import ArticlePage from "./pages/ArticlePage";
 import TopicList from "./pages/TopicList";
 import UserList from "./pages/UserList";
-import NotFound from "./pages/NotFound";
 import './App.css';
 
 const App = () => {
