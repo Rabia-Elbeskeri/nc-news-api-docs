@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../context/UserContext.jsx";
 import "./NewCommentForm.css";
 
 const NewCommentForm = ({ article_id, onCommentPosted }) => {

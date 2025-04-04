@@ -1,17 +1,20 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import ApiReference from "./pages/ApiReference";
-import NotFound from "./pages/NotFound";
-import ArticleList from "./pages/ArticleList";
-import ArticlePage from "./pages/ArticlePage";
-import TopicList from "./pages/TopicList";
-import UserList from "./pages/UserList";
+import Navbar from "./components/Navbar.jsx";
+import Home from "./pages/Home.jsx";
+import ApiReference from "./api-docs/ApiReference.jsx";
+import NotFound from "./pages/NotFound.jsx";
+import ArticleList from "./pages/ArticleList.jsx";
+import ArticlePage from "./pages/ArticlePage.jsx";
+import TopicList from "./pages/TopicList.jsx";
+import UserList from "./pages/UserList.jsx";
 import './App.css';
 
 const App = () => {
     return (
         <BrowserRouter>
+                <Routes>
+                    <Route path="/api" element={<ApiReference />} />
+                </Routes>
             <Navbar />
             <main className="main-content">
                 <Routes>
@@ -20,7 +23,6 @@ const App = () => {
                     <Route path="/articles/:article_id" element={<ArticlePage />} />
                     <Route path="/topics" element={<TopicList />} />
                     <Route path="/users" element={<UserList />} />
-                    <Route path="/api" element={<ApiReference />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>
@@ -29,5 +31,3 @@ const App = () => {
 };
 
 export default App;
-
-

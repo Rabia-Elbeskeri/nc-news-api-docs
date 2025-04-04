@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
-import Comment from "./Comment";
-import NewCommentForm from "./NewCommentForm";
+import Comment from "./Comment.jsx";
+import NewCommentForm from "./NewCommentForm.jsx";
 import "./CommentList.css";
 
 const CommentList = ({ article_id }) => {

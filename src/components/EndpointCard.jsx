@@ -1,14 +1,29 @@
 import "./EndpointCard.css";
 
-const EndpointCard = ({ method, path, description }) => {
+const EndpointCard = ({ endpoint }) => {
     return (
-        <div className={`endpoint-card ${method.toLowerCase()}`}>
-            <div className="endpoint-header">
-                <span className="method">{method}</span>
-                <span className="path">{path}</span>
+        endpoint && (
+            <div className="endpoint-card">
+                <span className={`method ${endpoint.method.toLowerCase()}`}>
+                    {endpoint.method}
+                </span>
+                <code>{endpoint.path}</code>
+                <p>{endpoint.description}</p>
+
+                {endpoint.queries && (
+                    <div className="queries">
+                        <h5>Query Parameters:</h5>
+                        <ul>
+                            {Object.entries(endpoint.queries).map(([key, value]) => (
+                                <li key={key}>
+                                    <strong>{key}</strong>: {value}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
             </div>
-            <p className="description">{description}</p>
-        </div>
+        )
     );
 };
 

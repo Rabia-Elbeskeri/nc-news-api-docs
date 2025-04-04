@@ -1,9 +1,9 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ArticleCard from "../components/ArticleCard";
-import CommentList from "../components/CommentList";
-import NewCommentForm from "../components/NewCommentForm";
+import ArticleCard from "../components/ArticleCard.jsx";
+import CommentList from "../components/CommentList.jsx";
+import NewCommentForm from "../components/NewCommentForm.jsx";
 import "./ArticlePage.css";
 
 

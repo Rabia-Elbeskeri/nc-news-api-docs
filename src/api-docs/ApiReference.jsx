@@ -1,6 +1,6 @@
 import React from "react";
-import endpoints from "../data/endpoints";
-import EndpointCard from "../components/EndpointCard";
+import endpoints from "../data/endpoints.js";
+import EndpointCard from "../components/EndpointCard.jsx";
 import "../components/EndpointCard.css";
 import "./ApiReference.css";
 
